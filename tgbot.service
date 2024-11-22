@@ -1,0 +1,12 @@
+[Unit]
+Description=Telegram Bot Service
+After=network.target
+
+[Service]
+User=ja_khan_gir
+WorkingDirectory=/home/projects/oson_bot
+ExecStart=/home/projects/oson_bot/venv/bin/python /home/projects/oson_bot/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
