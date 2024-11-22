@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv, find_dotenv
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
+from telegram.constants import ParseMode
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 
 load_dotenv(find_dotenv(".env"))
@@ -29,9 +30,12 @@ async def language_selection(update: Update, context: ContextTypes.DEFAULT_TYPE)
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
+    await query.message.delete()
+
     await query.message.reply_text(
         text="\n".join(text_lines[:-1]),
-        reply_markup=reply_markup
+        reply_markup=reply_markup,
+        parse_mode=ParseMode.MARKDOWN
     )
 
 
@@ -57,5 +61,6 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CallbackQueryHandler(language_selection))
 
-    print("Bot ishga tushdi!")
+    print("Bot started...")
     app.run_polling()
+    print("Bot stopped...")

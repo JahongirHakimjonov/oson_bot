@@ -3,7 +3,7 @@ Description=Telegram Bot Service
 After=network.target
 
 [Service]
-User=ja_khan_gir
+User=felix_prod
 WorkingDirectory=/home/projects/oson_bot
 ExecStart=/home/projects/oson_bot/venv/bin/python /home/projects/oson_bot/main.py
 Restart=always

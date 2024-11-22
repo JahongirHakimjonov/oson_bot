@@ -1,7 +1,7 @@
-Welcome to Oson Pay!
+*Welcome to Oson Pay!*
 
 Managing your finances is now easier than ever! Instant deposits and withdrawals.
 
-To launch the bot, click the Open button.
+To launch the bot, click the *Open* button.
 
 Open
